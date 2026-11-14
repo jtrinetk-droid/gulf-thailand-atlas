@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Gulf Thailand Can't Drill — a satellite atlas of the Thailand–Cambodia Overlapping Claims Area</title>
+<meta name="description" content="An interactive atlas of the Overlapping Claims Area in the Gulf of Thailand: where Thailand's gas is running out, where the undrilled gas sits, and what it would take to unlock it.">
+<meta property="og:title" content="The Gulf Thailand Can't Drill">
+<meta property="og:description" content="27,000 km² of dark water between Thailand and Cambodia, and why it matters for Thai energy security.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23070b14'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23f5b53f'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter+Tight:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<nav class="topnav" id="topnav">
+  <a class="brand" href="#top"><span class="dot"></span>The Gulf Thailand Can't Drill</a>
+  <button class="navtoggle" id="navtoggle" aria-label="Menu">☰</button>
+  <ul id="navlinks">
+    <li><a href="#basics">Basics</a></li>
+    <li><a href="#atlas">Atlas</a></li>
+    <li><a href="#gas">The gas</a></li>
+    <li><a href="#history">History</a></li>
+    <li><a href="#war">2025</a></li>
+    <li><a href="#paths">Paths</a></li>
+    <li><a href="#recs">What to do</a></li>
+    <li><a href="#method">Sources</a></li>
+  </ul>
+</nav>
+
+<!-- ============================================================ HERO -->
+<header class="hero" id="top">
+  <div class="hero-map" id="heromap" aria-hidden="true"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-copy">
+    <p class="kicker">A satellite atlas · Thailand–Cambodia Overlapping Claims Area</p>
+    <h1>The Gulf Thailand<br>Can't Drill</h1>
+    <p class="lede">Every night, hundreds of gas platforms light up the Gulf of Thailand. Next to them sits a wedge of sea the size of Rwanda that has stayed dark for fifty years. This is the story of that wedge, and why it now matters more than the Strait of Hormuz for Thailand's energy security.</p>
+    <div class="hero-cta">
+      <a class="btn primary" href="#atlas">Open the atlas</a>
+      <a class="btn ghost" href="#basics">Start with the basics</a>
+    </div>
+    <p class="byline">By Jira Trinetkamol · Schwarzman College, Tsinghua University · November 2026</p>
+  </div>
+  <div class="hero-legend">
+    <span><i class="sw light"></i>Producing gas &amp; oil fields</span>
+    <span><i class="sw thai"></i>Thailand's 1973 claim line</span>
+    <span><i class="sw camb"></i>Cambodia's 1972 claim line</span>
+    <span><i class="sw oca"></i>Overlapping Claims Area</span>
+  </div>
+  <a class="scrollcue" href="#stats" aria-label="Scroll">↓</a>
+</header>
+
+<!-- ============================================================ STATS -->
+<section class="stats" id="stats">
+  <div class="stat"><div class="num">~27,000<span>km²</span></div><div class="lbl">of sea claimed by both countries — about half the size of Thailand's Central Plains, or ten times Hong Kong</div></div>
+  <div class="stat"><div class="num">11–12<span>tcf</span></div><div class="lbl">estimated gas (plus up to 700 million barrels of oil): roughly six to seven years of Thailand's total gas use. Nothing has been drilled, so these are 1970s-era guesses</div></div>
+  <div class="stat"><div class="num">54<span>years</span></div><div class="lbl">since Cambodia's 1972 claim. The 2001 negotiating committee met twice in a quarter-century</div></div>
+  <div class="stat"><div class="num">0<span>wells</span></div><div class="lbl">drilled inside the disputed area. Meanwhile Thailand's own fields are depleting and imported LNG fills the gap</div></div>
+</section>
+
+<!-- ============================================================ BASICS -->
+<section class="chapter" id="basics">
+  <div class="chapter-head">
+    <span class="chnum">01</span>
+    <h2>The dispute in sixty seconds</h2>
+    <p class="sub">No energy or legal background needed. Three things to understand before the map.</p>
+  </div>
+
+  <div class="cards3">
+    <article class="card">
+      <div class="card-ill" id="ill1"></div>
+      <h3>Two countries drew two different lines</h3>
+      <p>Countries own the seabed off their coasts, but where two coasts face each other someone has to draw the dividing line. In 1972 Cambodia drew one that runs <em>straight west through the middle of Thailand's island of Koh Kut</em>, then turns south. In 1973 Thailand drew its own line, giving Koh Kut full weight, which pushes the line far to the east. The sea between the two lines is the <strong>Overlapping Claims Area</strong>, or OCA.</p>
+    </article>
+    <article class="card">
+      <div class="card-ill" id="ill2"></div>
+      <h3>Thailand runs on Gulf gas, and the Gulf is running down</h3>
+      <p>Gas makes more than half of Thailand's electricity, and most of that gas has come from the Gulf of Thailand since 1981. Those fields are now mature: Erawan, the anchor field, produced around 1,200 million cubic feet a day in 2020 and about 800 today. The shortfall is covered by liquefied natural gas (LNG) shipped in by sea, roughly a quarter of it through the Strait of Hormuz.</p>
+    </article>
+    <article class="card">
+      <div class="card-ill" id="ill3"></div>
+      <h3>A deal existed. The 2025 war killed it</h3>
+      <p>In 2001 the two governments signed a memorandum (MOU 2544, or "MOU 44") to negotiate the boundary and a joint gas scheme together. It produced almost nothing. In 2025 a border war and a political crisis in Bangkok made the whole subject toxic, and in May 2026 Thailand tore the MOU up. Cambodia took the dispute to a UN conciliation process whose advice is not binding.</p>
+    </article>
+  </div>
+
+  <div class="glossary">
+    <h4>Words you will see</h4>
+    <dl>
+      <div><dt>OCA</dt><dd>Overlapping Claims Area: the roughly 26,000–27,000 km² of the Gulf claimed by both Thailand and Cambodia.</dd></div>
+      <div><dt>MOU 2544 / MOU 44</dt><dd>The 2001 memorandum of understanding (2544 in the Thai calendar). It split the OCA at latitude 11°N: the northern part to be divided, the southern part to be jointly developed, both negotiated together.</dd></div>
+      <div><dt>tcf</dt><dd>Trillion cubic feet of gas. Thailand uses about 1.7 tcf a year.</dd></div>
+      <div><dt>MMscfd</dt><dd>Million standard cubic feet per day, the unit used for field output. Thailand consumes roughly 4,500–4,700 MMscfd.</dd></div>
+      <div><dt>LNG</dt><dd>Liquefied natural gas, cooled and shipped by tanker. Priced on Asian spot markets, so a Middle East war raises Thai power bills within weeks.</dd></div>
+      <div><dt>Joint development</dt><dd>Both countries set the boundary question aside, create a shared authority, and split the oil and gas revenue. Thailand already does this with Malaysia.</dd></div>
+      <div><dt>UNCLOS conciliation</dt><dd>A procedure under the UN Law of the Sea Convention. A five-member commission hears both sides and writes a report within about a year. The report is advice, not a ruling.</dd></div>
+      <div><dt>Koh Kut (Ko Kood)</dt><dd>A 105 km² Thai island in Trat province, 2,600 residents. Cambodia's 1972 line crosses it, which is why the dispute touches Thai sovereignty and not just seabed rights.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============================================================ ATLAS -->
+<section class="chapter wide" id="atlas">
+  <div class="chapter-head">
+    <span class="chnum">02</span>
+    <h2>The atlas</h2>
+    <p class="sub">Switch between a vector map, satellite imagery and NASA night-lights. Click anything. Or take the five-stop tour.</p>
+  </div>
+
+  <div class="atlas-wrap">
+    <div class="atlas-side">
+      <div class="panel">
+        <h4>Base</h4>
+        <div class="seg" id="basesel">
+          <button data-base="vector" class="on">Atlas</button>
+          <button data-base="sat">Satellite</button>
+          <button data-base="night">Night lights</button>
+        </div>
+        <p class="hint" id="basehint">Vector base built from Natural Earth. Always available.</p>
+      </div>
+      <div class="panel">
+        <h4>Layers</h4>
+        <label><input type="checkbox" data-layer="oca" checked> <i class="sw oca"></i>Overlapping Claims Area</label>
+        <label><input type="checkbox" data-layer="thai" checked> <i class="sw thai"></i>Thailand's 1973 line</label>
+        <label><input type="checkbox" data-layer="camb" checked> <i class="sw camb"></i>Cambodia's 1972 line</label>
+        <label><input type="checkbox" data-layer="lat11" checked> <i class="sw lat"></i>11°N split (MOU 2544)</label>
+        <label><input type="checkbox" data-layer="fields" checked> <i class="sw light"></i>Producing fields</label>
+        <label><input type="checkbox" data-layer="pipes"> <i class="sw pipe"></i>Pipelines (schematic)</label>
+        <label><input type="checkbox" data-layer="plants"> <i class="sw plant"></i>Gas power plants</label>
+        <label><input type="checkbox" data-layer="jda" checked> <i class="sw jda"></i>Malaysia–Thailand JDA</label>
+        <label><input type="checkbox" data-layer="labels" checked> <i class="sw lbl"></i>Place names</label>
+      </div>
+      <div class="panel">
+        <h4>Guided tour</h4>
+        <ol class="tour" id="tour">
+          <li><button data-stop="0">Koh Kut — where it starts</button></li>
+          <li><button data-stop="1">The lights — Thailand's gas province</button></li>
+          <li><button data-stop="2">The dark wedge</button></li>
+          <li><button data-stop="3">The model next door</button></li>
+          <li><button data-stop="4">Where the gas goes</button></li>
+        </ol>
+        <button class="btn small" id="resetview">Reset view</button>
+      </div>
+    </div>
+    <div class="atlas-main">
+      <div id="map"></div>
+      <div class="caption" id="mapcaption">
+        <strong>Start here.</strong> The amber dots are Thailand's producing fields. The hatched wedge is the sea both countries claim. Notice that the dots stop exactly where the wedge begins.
+      </div>
+    </div>
+  </div>
+  <p class="footnote">Claim lines are reconstructed from treaty anchor points and published descriptions, and calibrated to the published zone sizes; they are not official coordinates. Field markers are field centres, not individual platforms. Details in <a href="#method">Method &amp; sources</a>.</p>
+</section>
+
+<!-- ============================================================ THE GAS -->
+<section class="chapter" id="gas">
+  <div class="chapter-head">
+    <span class="chnum">03</span>
+    <h2>A sea running out of gas</h2>
+    <p class="sub">Why a seabed boundary is an energy-security problem, in four charts.</p>
+  </div>
+
+  <div class="chart-grid">
+    <figure class="chart">
+      <figcaption><h3>Erawan's cliff</h3><p>Output of Thailand's anchor field, million cubic feet per day. The 2022 hand-over from Chevron to PTTEP was delayed by a dispute over decommissioning costs, and production collapsed before recovering to the contracted 800.</p></figcaption>
+      <div class="plot" id="ch-erawan"></div>
+      <p class="src">Sources: S&amp;P Global Platts via Hellenic Shipping News (2020–21); Fitch Solutions via Natural Gas World (2022); PTTEP via The Thaiger (2023–24); Kasikorn Research (2025).</p>
+    </figure>
+    <figure class="chart">
+      <figcaption><h3>LNG fills the hole</h3><p>Thailand's LNG imports, million tonnes a year. Imports jumped 40% in 2023 as domestic output fell. About 70% of cargoes are bought on the spot market, which is why Middle East shocks reach Thai bills quickly.</p></figcaption>
+      <div class="plot" id="ch-lng"></div>
+      <p class="src">Sources: S&amp;P Global (2023 volume and growth); Wood Mackenzie (2024); Kasikorn Research (2025 forecast). 2021 and 2022 derived from reported monthly data and growth rates.</p>
+    </figure>
+    <figure class="chart">
+      <figcaption><h3>Where Thailand's gas comes from</h3><p>Approximate supply mix. In 2020 domestic fields covered about 70%. By 2024 the Gulf's share had slipped toward half, with LNG rising to a third. Analysts expect LNG to reach 60% by the mid-2030s.</p></figcaption>
+      <div class="plot" id="ch-mix"></div>
+      <p class="src">Sources: S&amp;P Global Platts (2020 shares); Kasikorn Research and Wood Mackenzie (2024 import split and LNG volume; domestic volume from S&amp;P). 2024 shares are derived, see method.</p>
+    </figure>
+    <figure class="chart">
+      <figcaption><h3>The exposure</h3><p>How much of what Thailand imports passes through the Strait of Hormuz, and how much of its power still depends on gas. Every year the OCA stays closed is another year these bars stay tall.</p></figcaption>
+      <div class="plot" id="ch-exposure"></div>
+      <p class="src">Sources: ORF (Hormuz shares, 2026); Kasikorn Research (gas share of generation, Jan–Aug 2025); Wood Mackenzie (LNG share projection).</p>
+    </figure>
+  </div>
+
+  <div class="callout">
+    <h3>So what is in the OCA?</h3>
+    <p>Nobody knows precisely, because nobody has drilled. Estimates circulating in 2024–2026 range from <a href="https://thediplomat.com/2024/03/politics-energy-and-nationalism-thailand-and-cambodias-overlapping-maritime-claims/" target="_blank" rel="noopener">11 trillion cubic feet of gas</a> to <a href="https://www.forbes.com/sites/kensilverstein/2026/07/07/cambodia-thailand-sit-on-billions-in-oil-and-gas-thats-untouchable/" target="_blank" rel="noopener">12 tcf plus 700 million barrels of oil</a>; Thai press reports cite lower oil figures. Taken at face value, 11–12 tcf is six to seven years of Thailand's entire gas consumption, or roughly another Erawan running for a quarter-century. Even if the real number is half that, it is the largest undeveloped resource within reach of Thailand's existing pipelines, which pass within about 60–100 km of the wedge.</p>
+  </div>
+</section>
+
+<!-- ============================================================ HISTORY -->
+<section class="chapter" id="history">
+  <div class="chapter-head">
+    <span class="chnum">04</span>
+    <h2>How we got here</h2>
+    <p class="sub">A century of lines, deals and missed chances. Filter by theme.</p>
+  </div>
+  <div class="tl-filters" id="tlfilters">
+    <button data-f="all" class="on">All</button>
+    <button data-f="legal">Legal &amp; boundaries</button>
+    <button data-f="energy">Energy</button>
+    <button data-f="politics">Politics &amp; conflict</button>
+  </div>
+  <ol class="timeline" id="timeline"></ol>
+</section>
+
+<!-- ============================================================ 2025 -->
+<section class="chapter" id="war">
+  <div class="chapter-head">
+    <span class="chnum">05</span>
+    <h2>Why the deal died in 2025</h2>
+    <p class="sub">A border war, a leaked phone call and a casino bill. Separate what is documented from what is inferred.</p>
+  </div>
+  <div class="prose">
+    <p>The Paetongtarn Shinawatra government that took office in 2024 was the first in a decade with a working channel to Phnom Penh, through her father Thaksin's long personal alliance with Hun Sen. In November 2024 she said MOU 2544 could not be scrapped unilaterally and that talks would resume. Nationalist groups mobilised almost immediately around Koh Kut.</p>
+    <p>Then the relationship broke. A clash at Ta Moan Thom on 28 May 2025 killed a Cambodian soldier. On 15 June Paetongtarn phoned Hun Sen to calm things; on 18 June he leaked the recording, in which she called him "uncle" and disparaged a Thai army commander. Her coalition partner walked out the same day. The Constitutional Court suspended her on 1 July and removed her on 29 August. In between, late July brought the heaviest fighting in a decade and the displacement of several hundred thousand people. The incoming government froze OCA energy talks in September "until the issue of the national border is resolved", campaigned on scrapping the MOU, and did so on 5 May 2026, two months into the Hormuz crisis.</p>
+  </div>
+  <div class="twocol">
+    <div class="col known">
+      <h3>Documented</h3>
+      <ul>
+        <li>The sequence of events above, with dates, is well reported (TIME, Wikipedia timeline, The Nation).</li>
+        <li>A Hun Sen adviser tried in 2024 to buy about 20% of Bangchak, a Thai energy company; the Social Security Fund refused to sell. Gregory Raymond (ISEAS) reads this as an attempt to push Bangkok toward a joint-development treaty by private means.</li>
+        <li>Thailand's Entertainment Complex Bill, which would have legalised casinos, was in parliament during the crisis and was withdrawn on 7 July 2025, six days after the suspension. Cambodia's border casinos in Poipet are a significant revenue stream.</li>
+        <li>The OCA energy track was formally frozen on 9 September 2025 by energy minister Auttapol Rerkpiboon.</li>
+      </ul>
+    </div>
+    <div class="col contested">
+      <h3>Inferred, and disputed</h3>
+      <ul>
+        <li><strong>That Hun Sen engineered Paetongtarn's fall over the OCA.</strong> No source states this as fact, and Raymond says it "cannot be ascertained conclusively". The strongest objection is internal: removing Paetongtarn destroyed the one Thai government likely to sign a gas deal. If the gas was the goal, the war was self-defeating.</li>
+        <li><strong>That the casino bill was a cause.</strong> The timing is suggestive, but casino legalisation had been discussed in Bangkok for years without friction.</li>
+        <li><strong>My reading.</strong> The OCA was the prize the Thaksin–Hun Sen relationship had failed to deliver, the casino bill was a threat to Cambodian revenue, and the leaked call was punishment for both. Thitinan Pongsudhirak's verdict, "it got personal", fits the evidence better than a plan. Either way the energy outcome is identical: the deal died with the government, and the dispute hardened just as Hormuz showed why the gas matters.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ MODEL NEXT DOOR -->
+<section class="chapter" id="model">
+  <div class="chapter-head">
+    <span class="chnum">06</span>
+    <h2>The model next door</h2>
+    <p class="sub">Thailand has solved this exact problem once already, with Malaysia.</p>
+  </div>
+  <div class="compare">
+    <div class="cmp-head"></div>
+    <div class="cmp-head jda">Malaysia–Thailand JDA</div>
+    <div class="cmp-head oca">Thailand–Cambodia OCA</div>
+
+    <div class="cmp-row">Size</div><div>7,250 km²</div><div>~26,000–27,000 km²</div>
+    <div class="cmp-row">Overlap created</div><div>1970s competing shelf claims</div><div>1972 (Cambodia) and 1973 (Thailand) claims</div>
+    <div class="cmp-row">Framework</div><div>1979 MOU, 1990 agreement: set sovereignty aside, create a Joint Authority, split revenue 50:50</div><div>2001 MOU 2544: negotiate boundary (north) and joint development (south) together. Terminated 5 May 2026</div>
+    <div class="cmp-row">Institution</div><div>Malaysia–Thailand Joint Authority (1991), seven members each side, statutory body in both countries</div><div>None</div>
+    <div class="cmp-row">Wells</div><div>59 exploration and appraisal wells by 2007, 22 gas fields declared, ~8.5 tcf proved and probable</div><div>0</div>
+    <div class="cmp-row">Production</div><div>First gas January 2005 (Cakerawala). Block A-18 renewed with a new contract in September 2026. B-17-01 next</div><div>None</div>
+    <div class="cmp-row">Time from MOU to first gas</div><div>26 years (1979→2005), including 11 years to agree the authority</div><div>25 years and counting</div>
+    <div class="cmp-row">Sovereignty touchpoint</div><div>Seabed only</div><div>Koh Kut: Cambodia's line crosses a populated Thai island</div>
+  </div>
+  <p class="prose">The JDA took a generation to produce gas, which is a warning as much as a model. But its design did the hard thing: it let two governments make money from a seabed neither would concede. The one feature it lacked, and the OCA needs, is a way to take an island off the table.</p>
+</section>
+
+<!-- ============================================================ PATHS -->
+<section class="chapter" id="paths">
+  <div class="chapter-head">
+    <span class="chnum">07</span>
+    <h2>Four paths forward</h2>
+    <p class="sub">Click a path to see what it would mean. The ratings are my assessment, not a forecast.</p>
+  </div>
+  <div class="paths">
+    <div class="path-tabs" id="pathtabs"></div>
+    <div class="path-body">
+      <div class="path-text" id="pathtext"></div>
+      <div class="path-meters" id="pathmeters"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ RECOMMENDATIONS -->
+<section class="chapter" id="recs">
+  <div class="chapter-head">
+    <span class="chnum">08</span>
+    <h2>What I would do</h2>
+    <p class="sub">Six moves for a Thai policymaker, in the order I would make them.</p>
+  </div>
+  <ol class="recs">
+    <li>
+      <h3>Take Koh Kut off the table, in writing</h3>
+      <p>Thailand's position that there is "no dispute" over the island is correct and widely accepted. Say so jointly. A short statement that any future arrangement is <em>without prejudice to Thai sovereignty over Koh Kut</em>, signed by both governments inside the conciliation process, removes the only part of this dispute that moves Thai voters. Without it, no Thai official will sign anything, because Article 157 of the Constitution exposes them to prosecution for "political" decisions.</p>
+    </li>
+    <li>
+      <h3>Let the commission produce the baseline</h3>
+      <p>The UNCLOS conciliation report is due around mid-2027 and is not binding. That is a feature. An equidistance-based line proposed by a neutral commission is something neither government has to author or defend at home. Thailand should say now that it will treat the report as the technical starting point for talks, and spend the intervening months making sure the commission has Thailand's data.</p>
+    </li>
+    <li>
+      <h3>Re-separate the two tracks</h3>
+      <p>MOU 2544 tied joint development in the south to delimitation in the north, so neither moved. Replace it with two instruments: a joint-development agreement for the southern zone on the Malaysia–Thailand template, with a Joint Authority, a 50:50 split and a fixed term; and a delimitation track for the north that continues in parallel, with a review clause if it is not settled within, say, ten years.</p>
+    </li>
+    <li>
+      <h3>Start with a joint survey, not a treaty</h3>
+      <p>The biggest uncertainty is geological: the 11–12 tcf figures rest on 1970s seismic. A jointly funded, commission-supervised seismic survey is cheap, fits the confidence-building measures both sides agreed in October 2026, and produces the first new fact in this dispute in fifty years. If the resource is smaller than claimed, better to learn that before spending political capital.</p>
+    </li>
+    <li>
+      <h3>Ring-fence the revenue for resilience</h3>
+      <p>Thailand's Hormuz lesson in 2026 was fiscal: the Oil Fund spent about 99 billion baht hiding the price of fuel. Thailand's share of any OCA revenue should go by law into two things the crisis showed it lacks: a state-owned strategic petroleum reserve, and grid and storage investment for the renewables build-out in PDP 2026. Gas revenue that funds the exit from gas is the only version of this project that survives a net-zero argument.</p>
+    </li>
+    <li>
+      <h3>Make the energy case publicly, and make it about price</h3>
+      <p>Nationalism won the argument in 2024–2026 because the other side of the ledger was never shown. The government should publish what the OCA stalemate costs: the LNG cargoes bought at Singapore spot prices, the Oil Fund deficit, the power tariff deferrals. The gas in the wedge is cheaper than the next war in the Gulf. That is an argument that nationalism cannot answer, and nobody has made it.</p>
+    </li>
+  </ol>
+
+  <div class="callout alt">
+    <h3>And the view from Phnom Penh</h3>
+    <p>Cambodia produces almost no oil or gas of its own and imports all its fuel, which is why Thailand's 2026 export ban closed a third of its petrol stations within weeks. Phnom Penh's interest in a deal is therefore at least as strong as Bangkok's, but its leverage is different: it wants the boundary settled on equidistance terms that reduce Koh Kut's effect, and it has moved the dispute into an international forum where that argument gets a hearing. A Thai proposal that offers money and certainty in the south in exchange for an explicit island carve-out in the north is one Cambodia can accept without losing face, because it is the same trade Malaysia made in 1979.</p>
+  </div>
+</section>
+
+<!-- ============================================================ TRADE-OFFS -->
+<section class="chapter" id="tradeoffs">
+  <div class="chapter-head">
+    <span class="chnum">09</span>
+    <h2>What could go wrong</h2>
+    <p class="sub">The honest list. Each of these could sink the plan.</p>
+  </div>
+  <div class="risks">
+    <div class="risk"><h3>The gas may not be there</h3><p>Every figure in this atlas for the OCA's resources is an estimate from seismic work done before 1973. Fields in the adjacent Pattani basin are small and compartmentalised, which is why Thailand needs hundreds of platforms. The OCA could be the same, and smaller fields mean higher costs.</p></div>
+    <div class="risk"><h3>It arrives too late to matter</h3><p>Even a deal signed in 2027 means first gas around 2035–2037. By then PDP 2026 aims for 65% or more clean power and Thai gas demand is projected to peak. The gas could be a bridge the country has already crossed.</p></div>
+    <div class="risk"><h3>Stranded assets and the climate case</h3><p>New gas infrastructure built in the late 2030s risks competing with cheaper solar and storage. The case for the OCA is as a replacement for imported LNG, not as new demand; if it becomes a reason to build more gas plants, it is a mistake.</p></div>
+    <div class="risk"><h3>Thai domestic politics</h3><p>The 2024 Koh Kut campaign and the 2009 attempt to cancel the MOU show how quickly this becomes a sovereignty fight. A conciliation report that gives Koh Kut less than full effect would be read in Bangkok as a loss, whatever the gas.</p></div>
+    <div class="risk"><h3>Cambodian politics</h3><p>Decision-making in Phnom Penh runs through the Hun family and a patronage network for which border casinos and scam compounds are revenue. A deal that cuts across those interests, or that Hun Sen cannot claim as a win, may not hold.</p></div>
+    <div class="risk"><h3>The money is not only Thailand's</h3><p>A 50:50 split means Thailand gives up half of what it claims as fully its own. The counter-argument is arithmetic: half of a producing field is worth more than all of a field that never gets drilled, which is what the last 54 years have delivered.</p></div>
+  </div>
+</section>
+
+<!-- ============================================================ METHOD -->
+<section class="chapter" id="method">
+  <div class="chapter-head">
+    <span class="chnum">10</span>
+    <h2>Method &amp; sources</h2>
+    <p class="sub">How the maps were built, what is approximate, and where every number comes from.</p>
+  </div>
+  <div class="method">
+    <h3>Geometry</h3>
+    <p>Neither government publishes an official digital boundary of its claim, so the two lines on the map are <strong>reconstructions</strong>. Three anchors are documented: the 1907 treaty land-boundary point at 11°38.8′N 102°54.3′E (listed in Cambodia's 1982 maritime decree, UN DOALOS), Koh Kut's position (Natural Earth), and Point K of the 1997 Thailand–Vietnam boundary at 8°46′54.8″N 102°12′11.7″E (Sovereign Limits, IBRU), which lies on Cambodia's southern claim limit. Cambodia's line is drawn west from the treaty point through Koh Kut and then south to Point K, following published descriptions that it "passes through Koh Kut, continues into the Gulf and turns south". Thailand's line runs from the treaty point to the midpoint between Koh Kut and Cambodia's Koh Kong island, then along a median line to Point K. The westward extent of Cambodia's line was then calibrated so that the areas north and south of 11°N match the published MOU 2544 figures of about 10,000 and 16,000 km². The result is about 27,400 km², inside the 26,000–27,000 km² range quoted by Thai and international sources. Expect errors of a few kilometres along each line; the shape and position are reliable, the exact vertices are not.</p>
+    <p>The Malaysia–Thailand JDA polygon uses the seven turning points published in the 1979 MOU. Coastlines are Natural Earth 10m. Field markers are field centres from MarineLink's offshore register where available (marked "verified" in the popup) and operator descriptions otherwise (marked "approximate"). Pipelines are schematic. Power plants are gas-fired plants of 300 MW or more from the WRI Global Power Plant Database.</p>
+    <h3>Imagery</h3>
+    <p>Satellite base: Esri World Imagery. Night lights: NASA Earth Observations / GIBS, VIIRS "Earth at Night" composite and the daily VIIRS Day/Night Band, served live from NASA. The bright cluster in the central Gulf is gas flaring and platform lighting; it is the most direct satellite evidence of where Thailand's production is, and of where it is not.</p>
+    <h3>Derived numbers</h3>
+    <p>LNG imports for 2021 are estimated from S&amp;P Global's reported monthly figures (0.52 Mt/month January–September, 0.8 Mt in October) and 2022 from the reported 40% rise to 11.55 Mt in 2023. The 2024 supply mix converts 11.3 Mt of LNG to about 1,500 MMscfd, applies Kasikorn's 72:28 LNG-to-Myanmar import split, and uses S&amp;P's 2.64 Bcf/d domestic figure. "Six to seven years of demand" divides 11–12 tcf by Thai consumption of about 1.7 tcf a year. Path ratings in chapter 07 are the author's judgement.</p>
+    <h3>Sources</h3>
+    <ul class="sources" id="sources"></ul>
+  </div>
+</section>
+
+<footer class="foot">
+  <div>
+    <strong>The Gulf Thailand Can't Drill</strong><br>
+    Final project for <em>Asian Energy Security</em>, Schwarzman College, Tsinghua University, 2026.<br>
+    Jira Trinetkamol. Text and reconstructed geometry © 2026; may be quoted with attribution.
+  </div>
+  <div class="foot-right">
+    Map data: Natural Earth (public domain) · Esri World Imagery · NASA GIBS · WRI Global Power Plant Database (CC BY 4.0) · MarineLink offshore register.<br>
+    Built with Leaflet and D3.
+  </div>
+</footer>
+
+<script src="vendor/leaflet/leaflet.js"></script>
+<script src="vendor/d3/d3.min.js"></script>
+<script src="js/content.js"></script>
+<script src="js/atlas.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
